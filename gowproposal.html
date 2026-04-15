@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta — Goww Materiales × All In Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink:   #FF2D78;
+  --yellow: #FFE000;
+  --aqua:   #00D4C8;
+  --lime:   #8AE000;
+  --orange: #FF7A00;
+  --purple: #9B5EFF;
+  --ink:    #0D0D0D;
+  --white:  #FFFFFF;
+  --border: #E8E8E8;
+  --surface:#F7F7F5;
+  --muted:  #888;
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--ink);font-size:15px;line-height:1.65;overflow-x:hidden}
+.container{max-width:900px;margin:0 auto;padding:0 36px}
+.eyebrow{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;letter-spacing:-0.025em;line-height:1.08;color:var(--ink)}
+section{padding:88px 0}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.5s ease,transform 0.5s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ─── COLOR BAR ─── */
+.color-bar{height:6px;display:flex}
+.cb-1{flex:1;background:var(--pink)}
+.cb-2{flex:1;background:var(--yellow)}
+.cb-3{flex:1;background:var(--aqua)}
+.cb-4{flex:1;background:var(--lime)}
+.cb-5{flex:1;background:var(--orange)}
+.cb-6{flex:1;background:var(--purple)}
+
+/* ─── HERO ─── */
+.hero{background:var(--ink);min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:44px 0 52px;position:relative;overflow:hidden}
+.hero-blobs{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.blob{position:absolute;border-radius:50%}
+.blob-1{width:320px;height:320px;background:var(--pink);opacity:0.18;top:-80px;right:60px}
+.blob-2{width:200px;height:200px;background:var(--yellow);opacity:0.14;top:120px;right:-60px}
+.blob-3{width:160px;height:160px;background:var(--aqua);opacity:0.12;bottom:80px;left:5%}
+.blob-4{width:100px;height:100px;background:var(--lime);opacity:0.10;top:60%;right:25%}
+.hero-top{display:flex;justify-content:space-between;align-items:center;padding:0 48px;position:relative;z-index:2}
+.agency-tag{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4)}
+.date-tag{font-family:'Syne',sans-serif;font-size:11px;color:rgba(255,255,255,0.25);letter-spacing:0.06em}
+.hero-main{padding:0 48px;position:relative;z-index:2}
+.hero-eyebrow{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--pink);margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';display:block;width:22px;height:2px;background:var(--pink)}
+.hero-h1{font-family:'Syne',sans-serif;font-size:clamp(52px,8vw,96px);font-weight:800;color:#fff;line-height:0.93;letter-spacing:-0.035em;margin-bottom:28px}
+.hero-h1 .accent{color:var(--yellow);display:block}
+.hero-desc{font-size:16px;color:rgba(255,255,255,0.45);max-width:440px;line-height:1.7;font-weight:300}
+.hero-bottom{padding:0 48px;display:flex;justify-content:space-between;align-items:flex-end;position:relative;z-index:2;flex-wrap:wrap;gap:24px}
+.hero-meta-list{display:flex;flex-direction:column;gap:8px}
+.hero-meta-item{font-size:12px;color:rgba(255,255,255,0.3);font-weight:300;letter-spacing:0.02em}
+.hero-meta-item span{color:rgba(255,255,255,0.65);font-weight:400}
+
+/* ─── SERVICES ─── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.service-card{border-radius:var(--radius);padding:32px 26px;position:relative;overflow:hidden;transition:transform 0.2s}
+.service-card:hover{transform:translateY(-3px)}
+.svc-1{background:var(--pink)}
+.svc-2{background:var(--yellow)}
+.svc-3{background:var(--aqua)}
+.svc-1 .service-num,.svc-1 .service-name,.svc-1 .service-desc{color:#fff}
+.svc-1 .service-num{color:rgba(255,255,255,0.5)}
+.svc-2 .service-num,.svc-2 .service-name,.svc-2 .service-desc,.svc-3 .service-num,.svc-3 .service-name,.svc-3 .service-desc{color:var(--ink)}
+.svc-2 .service-num,.svc-3 .service-num{color:rgba(13,13,13,0.4)}
+.service-num{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.1em;margin-bottom:24px}
+.service-bg-num{font-family:'Syne',sans-serif;font-size:100px;font-weight:800;line-height:1;position:absolute;bottom:-16px;right:-8px;opacity:0.12;letter-spacing:-0.05em}
+.svc-1 .service-bg-num{color:#fff}
+.svc-2 .service-bg-num,.svc-3 .service-bg-num{color:var(--ink)}
+.service-icon-wrap{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.svc-1 .service-icon-wrap{background:rgba(255,255,255,0.2)}
+.svc-2 .service-icon-wrap,.svc-3 .service-icon-wrap{background:rgba(0,0,0,0.1)}
+.service-name{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px;line-height:1.2}
+.service-desc{font-size:13px;line-height:1.65;font-weight:300;opacity:0.85}
+.service-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.stag{font-size:10px;font-weight:600;font-family:'Syne',sans-serif;letter-spacing:0.04em;padding:3px 10px;border-radius:20px}
+.svc-1 .stag{background:rgba(255,255,255,0.22);color:#fff}
+.svc-2 .stag,.svc-3 .stag{background:rgba(0,0,0,0.12);color:var(--ink)}
+
+/* ─── WORKFLOW ─── */
+.workflow-list{display:flex;flex-direction:column;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.workflow-item{display:grid;grid-template-columns:64px 1fr auto;align-items:center;padding:22px 28px;background:#fff;border-bottom:1px solid var(--border);gap:20px;transition:background 0.15s;position:relative}
+.workflow-item:last-child{border-bottom:none}
+.workflow-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
+.wf-1::before{background:var(--pink)}
+.wf-2::before{background:var(--yellow)}
+.wf-3::before{background:var(--orange)}
+.wf-4::before{background:var(--aqua)}
+.wf-5::before{background:var(--lime)}
+.workflow-item:hover{background:#fafafa}
+.wf-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;letter-spacing:-0.04em;line-height:1}
+.wf-1 .wf-num{color:var(--pink)}
+.wf-2 .wf-num{color:#C8A800}
+.wf-3 .wf-num{color:var(--orange)}
+.wf-4 .wf-num{color:#009E94}
+.wf-5 .wf-num{color:#5A9600}
+.wf-content h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.wf-content p{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.6}
+.wf-badge{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.badge-a{background:#FFF0F5;color:#CC1A5E}
+.badge-s{background:#FFF8E0;color:#7A5200}
+
+/* ─── TEAM ─── */
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.team-card{border-radius:var(--radius);padding:28px 20px;text-align:center;transition:transform 0.2s}
+.team-card:hover{transform:translateY(-3px)}
+.tc-1{background:var(--pink)}
+.tc-2{background:var(--purple)}
+.tc-3{background:var(--orange)}
+.tc-4{background:var(--aqua)}
+.avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:15px;font-weight:800;margin:0 auto 14px;letter-spacing:0.02em}
+.tc-1 .avatar,.tc-2 .avatar,.tc-3 .avatar{background:rgba(255,255,255,0.22);color:#fff}
+.tc-4 .avatar{background:rgba(0,0,0,0.12);color:var(--ink)}
+.team-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:3px}
+.tc-1 .team-name,.tc-2 .team-name,.tc-3 .team-name{color:#fff}
+.tc-4 .team-name{color:var(--ink)}
+.team-role{font-size:11.5px;font-weight:300}
+.tc-1 .team-role,.tc-2 .team-role,.tc-3 .team-role{color:rgba(255,255,255,0.75)}
+.tc-4 .team-role{color:rgba(0,0,0,0.55)}
+.team-role-tag{display:inline-block;margin-top:10px;font-size:10px;font-weight:700;font-family:'Syne',sans-serif;letter-spacing:0.07em;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+.tc-1 .team-role-tag,.tc-2 .team-role-tag,.tc-3 .team-role-tag{background:rgba(255,255,255,0.2);color:#fff}
+.tc-4 .team-role-tag{background:rgba(0,0,0,0.12);color:var(--ink)}
+
+/* ─── PRICING ─── */
+.pricing-wrap{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--radius);overflow:hidden;margin-bottom:14px}
+.pricing-left{background:var(--ink);padding:36px 32px}
+.pricing-right{background:var(--pink);padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between}
+.pi-label{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:22px}
+.pricing-left .pi-label{color:rgba(255,255,255,0.3)}
+.pricing-right .pi-label{color:rgba(255,255,255,0.6)}
+.include-list{display:flex;flex-direction:column;gap:13px}
+.include-item{display:flex;align-items:flex-start;gap:11px}
+.include-dot{width:18px;height:18px;border-radius:50%;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center}
+.id-1{background:var(--pink)}
+.id-2{background:var(--yellow)}
+.id-3{background:var(--aqua)}
+.id-4{background:var(--lime)}
+.id-5{background:var(--orange)}
+.include-dot svg{width:9px;height:9px}
+.include-text{font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.5;font-weight:300}
+.price-rows{display:flex;flex-direction:column;margin-bottom:24px}
+.price-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.15)}
+.price-row:last-child{border-bottom:none}
+.pr-key{font-size:13px;color:rgba(255,255,255,0.65);font-weight:300}
+.pr-val{font-size:14px;font-weight:500;color:#fff}
+.price-total-block{padding-top:18px;border-top:2px solid rgba(255,255,255,0.3)}
+.pt-label{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:6px}
+.pt-amount{font-family:'Syne',sans-serif;font-size:44px;font-weight:800;color:#fff;letter-spacing:-0.035em;line-height:1}
+.pt-unit{font-family:'Syne',sans-serif;font-size:14px;font-weight:600;color:rgba(255,255,255,0.7);margin-left:4px}
+.pricing-note{background:var(--yellow);border-radius:var(--radius-sm);padding:13px 16px;font-size:12px;color:var(--ink);line-height:1.6}
+
+/* ─── BILLING ─── */
+.billing-table{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+.bt-grid{display:grid;grid-template-columns:1fr 1fr}
+.bt-cell{padding:22px 26px;border-bottom:1px solid var(--border);border-right:1px solid var(--border)}
+.bt-cell:nth-child(even){border-right:none}
+.bt-cell:nth-last-child(-n+2){border-bottom:none}
+.bt-key{font-size:11px;color:var(--muted);font-weight:300;margin-bottom:4px}
+.bt-val{font-size:14px;font-weight:500;color:var(--ink)}
+.bt-footer{background:#FFF8E0;border-top:1px solid #FFE070;padding:14px 26px;font-size:12px;color:#7A5200;line-height:1.65}
+
+/* ─── FOOTER ─── */
+footer{background:var(--ink);padding:44px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-brand{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:#fff}
+.footer-sub{font-size:12px;color:rgba(255,255,255,0.3);margin-top:3px;font-weight:300}
+.footer-right{text-align:right}
+.footer-color-dots{display:flex;gap:6px;margin-top:10px;justify-content:flex-end}
+.fcd{width:10px;height:10px;border-radius:50%}
+
+@media(max-width:720px){
+  .container{padding:0 20px}
+  .hero-top,.hero-main,.hero-bottom{padding:0 20px}
+  .services-grid,.team-grid{grid-template-columns:1fr 1fr}
+  .pricing-wrap{grid-template-columns:1fr}
+  .bt-grid{grid-template-columns:1fr}
+  .bt-cell{border-right:none}
+  .bt-cell:nth-last-child(-n+2){border-bottom:1px solid var(--border)}
+  .bt-cell:last-child{border-bottom:none}
+  .workflow-item{grid-template-columns:48px 1fr}
+  .wf-badge{display:none}
+  .hero-h1{font-size:46px}
+}
+</style>
+</head>
+<body>
+
+<div class="color-bar"><div class="cb-1"></div><div class="cb-2"></div><div class="cb-3"></div><div class="cb-4"></div><div class="cb-5"></div><div class="cb-6"></div></div>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+  <div class="hero-top">
+    <div class="agency-tag">All In Agency SPA</div>
+    <div class="date-tag">Abril 2026</div>
+  </div>
+  <div class="hero-main">
+    <div class="hero-eyebrow">Propuesta de servicio</div>
+    <h1 class="hero-h1">Marketing<br>digital para<span class="accent">Goww.</span></h1>
+    <p class="hero-desc">Contenido ideado estratégicamente + campañas pagas en Meta y Google — todo bajo un mismo equipo.</p>
+  </div>
+  <div class="hero-bottom">
+    <div class="hero-meta-list">
+      <div class="hero-meta-item">Empresa <span>GOW MATERIALES SPA</span></div>
+      <div class="hero-meta-item">Contacto <span>Andrea Kunihiro</span></div>
+    </div>
+    <div class="hero-meta-list" style="text-align:right">
+      <div class="hero-meta-item">RUT <span>78.163.613-4</span></div>
+      <div class="hero-meta-item">Inicio <span>Mayo 2026</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICES ─── -->
+<section style="background:var(--surface)">
+  <div class="container">
+    <div class="section-header fade-up" style="margin-bottom:40px">
+      <div class="eyebrow" style="color:var(--pink)">Lo que incluye</div>
+      <h2 class="section-title">Tres pilares,<br>un solo equipo.</h2>
+    </div>
+    <div class="services-grid fade-up">
+      <div class="service-card svc-1">
+        <div class="service-num">01</div>
+        <div class="service-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <div class="service-name">Ideación de contenido</div>
+        <div class="service-desc">Estrategia, calendario editorial y conceptos alineados a la voz de Goww. Desde la idea hasta el brief listo para diseño.</div>
+        <div class="service-tags">
+          <span class="stag">Estrategia</span><span class="stag">Copy</span><span class="stag">Calendario</span>
+        </div>
+        <div class="service-bg-num">01</div>
+      </div>
+      <div class="service-card svc-2">
+        <div class="service-num">02</div>
+        <div class="service-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="service-name">Dirección creativa</div>
+        <div class="service-desc">Brief detallado a Isabella con formato, mensaje y referencia visual por pieza. Revisión y coordinación incluida.</div>
+        <div class="service-tags">
+          <span class="stag">Brief a diseño</span><span class="stag">Revisión</span>
+        </div>
+        <div class="service-bg-num">02</div>
+      </div>
+      <div class="service-card svc-3">
+        <div class="service-num">03</div>
+        <div class="service-icon-wrap">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D0D0D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="service-name">Campañas pagas</div>
+        <div class="service-desc">Gestión end-to-end de paid media: configuración, segmentación, optimización y reporte mensual de resultados.</div>
+        <div class="service-tags">
+          <span class="stag">Meta Ads</span><span class="stag">Google Ads</span>
+        </div>
+        <div class="service-bg-num">03</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WORKFLOW ─── -->
+<section>
+  <div class="container">
+    <div class="section-header fade-up" style="margin-bottom:40px">
+      <div class="eyebrow" style="color:var(--muted)">Cómo trabajamos</div>
+      <h2 class="section-title">Proceso mensual.</h2>
+    </div>
+    <div class="workflow-list fade-up">
+      <div class="workflow-item wf-1">
+        <div class="wf-num">01</div>
+        <div class="wf-content"><h3>Planificación mensual</h3><p>Javiera y Antonia definen el calendario editorial, temas clave y conceptos de cada semana según los objetivos del mes.</p></div>
+        <span class="wf-badge badge-a">Agencia</span>
+      </div>
+      <div class="workflow-item wf-2">
+        <div class="wf-num">02</div>
+        <div class="wf-content"><h3>Brief a diseño</h3><p>Briefing detallado a Isabella — formato, texto final, referencia visual y especificaciones técnicas por pieza.</p></div>
+        <span class="wf-badge badge-a">Agencia</span>
+      </div>
+      <div class="workflow-item wf-3">
+        <div class="wf-num">03</div>
+        <div class="wf-content"><h3>Revisión y aprobación</h3><p>Coordinamos con Andrea para revisar las piezas y obtener aprobación antes de publicar o pautar.</p></div>
+        <span class="wf-badge badge-s">Agencia + Cliente</span>
+      </div>
+      <div class="workflow-item wf-4">
+        <div class="wf-num">04</div>
+        <div class="wf-content"><h3>Gestión de campañas</h3><p>Configuramos, monitoreamos y optimizamos Meta Ads y Google Ads en base a los resultados en tiempo real.</p></div>
+        <span class="wf-badge badge-a">Agencia</span>
+      </div>
+      <div class="workflow-item wf-5">
+        <div class="wf-num">05</div>
+        <div class="wf-content"><h3>Reporte mensual</h3><p>Informe con métricas, insights del período y propuesta estratégica para el mes siguiente.</p></div>
+        <span class="wf-badge badge-s">Agencia + Cliente</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEAM ─── -->
+<section style="background:var(--surface)">
+  <div class="container">
+    <div class="section-header fade-up" style="margin-bottom:40px">
+      <div class="eyebrow" style="color:var(--muted)">Equipo asignado</div>
+      <h2 class="section-title">Las personas<br>detrás del proyecto.</h2>
+    </div>
+    <div class="team-grid fade-up">
+      <div class="team-card tc-1">
+        <div class="avatar">JC</div>
+        <div class="team-name">Javiera Cerda</div>
+        <div class="team-role">Contenido &amp; Estrategia</div>
+        <div class="team-role-tag">Dir. contenido</div>
+      </div>
+      <div class="team-card tc-2">
+        <div class="avatar">AD</div>
+        <div class="team-name">Antonia Díaz</div>
+        <div class="team-role">Contenido &amp; Estrategia</div>
+        <div class="team-role-tag">Dir. contenido</div>
+      </div>
+      <div class="team-card tc-3">
+        <div class="avatar">IS</div>
+        <div class="team-name">Isabella</div>
+        <div class="team-role">Diseño gráfico</div>
+        <div class="team-role-tag">Diseñadora</div>
+      </div>
+      <div class="team-card tc-4">
+        <div class="avatar">JA</div>
+        <div class="team-name">Jean Antunez</div>
+        <div class="team-role">Meta Ads &amp; Google Ads</div>
+        <div class="team-role-tag">Paid Media</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRICING ─── -->
+<section>
+  <div class="container">
+    <div class="section-header fade-up" style="margin-bottom:40px">
+      <div class="eyebrow" style="color:var(--muted)">Inversión</div>
+      <h2 class="section-title">Todo esto,<br>por <span style="color:var(--pink)">$399.211</span> netos.</h2>
+    </div>
+    <div class="pricing-wrap fade-up">
+      <div class="pricing-left">
+        <div class="pi-label">Incluye</div>
+        <div class="include-list">
+          <div class="include-item">
+            <div class="include-dot id-1"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="include-text">Ideación de contenido mensual completo</div>
+          </div>
+          <div class="include-item">
+            <div class="include-dot id-2"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="include-text">Dirección creativa y brief a diseño</div>
+          </div>
+          <div class="include-item">
+            <div class="include-dot id-3"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="include-text">Gestión de campañas Meta Ads + Google Ads</div>
+          </div>
+          <div class="include-item">
+            <div class="include-dot id-4"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="include-text">Reporte mensual de resultados</div>
+          </div>
+          <div class="include-item">
+            <div class="include-dot id-5"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="include-text">Equipo de 4 personas dedicadas</div>
+          </div>
+        </div>
+      </div>
+      <div class="pricing-right">
+        <div>
+          <div class="pi-label">Desglose</div>
+          <div class="price-rows">
+            <div class="price-row"><span class="pr-key">Fee neto mensual</span><span class="pr-val">$399.211</span></div>
+            <div class="price-row"><span class="pr-key">IVA (19%)</span><span class="pr-val">$75.850</span></div>
+            <div class="price-row"><span class="pr-key" style="font-size:11px;opacity:0.65">Equivale a · UF ref.</span><span class="pr-val" style="font-size:12px;opacity:0.75">10 UF · $39.921</span></div>
+            <div class="price-row"><span class="pr-key">Pauta publicitaria</span><span class="pr-val" style="font-style:italic;opacity:0.75">Cargo del cliente</span></div>
+          </div>
+        </div>
+        <div class="price-total-block">
+          <div class="pt-label">Total con IVA</div>
+          <div><span class="pt-amount">$475.061</span><span class="pt-unit">/mes</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="pricing-note fade-up">
+      El valor en CLP varía mensualmente según el valor de la UF del día de emisión de la factura. Valor de referencia UF: $39.921 (15 abr 2026).
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">All In Agency SPA</div>
+        <div class="footer-sub">RUT 77.686.615-6 · cmk@allinagency.cl</div>
+        <div class="footer-sub">Providencia 1208 Of. 207 — Santiago</div>
+      </div>
+      <div class="footer-right">
+        <div class="footer-sub">Propuesta preparada para</div>
+        <div class="footer-brand" style="color:var(--yellow)">Goww Materiales</div>
+        <div class="footer-sub" style="margin-top:3px">Andrea Kunihiro · Abril 2026</div>
+        <div class="footer-color-dots">
+          <div class="fcd" style="background:var(--pink)"></div>
+          <div class="fcd" style="background:var(--yellow)"></div>
+          <div class="fcd" style="background:var(--aqua)"></div>
+          <div class="fcd" style="background:var(--lime)"></div>
+          <div class="fcd" style="background:var(--orange)"></div>
+          <div class="fcd" style="background:var(--purple)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*90)});
+},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
