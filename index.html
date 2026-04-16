@@ -98,6 +98,7 @@ section{padding:88px 0}
 .wf-3::before{background:var(--orange)}
 .wf-4::before{background:var(--aqua)}
 .wf-5::before{background:var(--lime)}
+.wf-6::before{background:var(--purple)}
 .workflow-item:hover{background:#fafafa}
 .wf-num{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;letter-spacing:-0.04em;line-height:1}
 .wf-1 .wf-num{color:var(--pink)}
@@ -285,27 +286,32 @@ footer{background:var(--ink);padding:44px 0}
     <div class="workflow-list fade-up">
       <div class="workflow-item wf-1">
         <div class="wf-num">01</div>
-        <div class="wf-content"><h3>Planificación mensual</h3><p>Javiera y Antonia definen el calendario editorial, temas clave y conceptos de cada semana según los objetivos del mes.</p></div>
-        <span class="wf-badge badge-a">Agencia</span>
+        <div class="wf-content"><h3>Solicitud del cliente</h3><p>Tere Gottlieb nos envía una solicitud — campaña de venta, nuevas gráficas, lanzamiento u otro objetivo concreto.</p></div>
+        <span class="wf-badge badge-s">Cliente</span>
       </div>
       <div class="workflow-item wf-2">
         <div class="wf-num">02</div>
-        <div class="wf-content"><h3>Brief a diseño</h3><p>Briefing detallado para Tere Gottlieb — formato, texto final, referencia visual y especificaciones técnicas por pieza.</p></div>
+        <div class="wf-content"><h3>Estrategia de contenido + benchmark</h3><p>Javiera y Antonia desarrollan pilares de contenido, opciones creativas y un benchmark de paid media para identificar qué está funcionando en el mercado.</p></div>
         <span class="wf-badge badge-a">Agencia</span>
       </div>
       <div class="workflow-item wf-3">
         <div class="wf-num">03</div>
-        <div class="wf-content"><h3>Revisión y aprobación</h3><p>Coordinamos con Isabella Herrera para revisar las piezas y obtener aprobación antes de publicar o pautar.</p></div>
-        <span class="wf-badge badge-s">Agencia + Cliente</span>
+        <div class="wf-content"><h3>Presentación a Isabella Herrera</h3><p>Agendamos una reunión con Isabella para presentarle las propuestas. Ella elige las opciones que va a producir y se pone en marcha.</p></div>
+        <span class="wf-badge badge-a">Agencia + Diseño</span>
       </div>
       <div class="workflow-item wf-4">
         <div class="wf-num">04</div>
-        <div class="wf-content"><h3>Gestión de campañas</h3><p>Configuramos, monitoreamos y optimizamos Meta Ads y Google Ads en base a los resultados en tiempo real.</p></div>
-        <span class="wf-badge badge-a">Agencia</span>
+        <div class="wf-content"><h3>Producción y feedback</h3><p>Isabella produce las piezas y nos las envía. Damos feedback hasta que están listas — tantas rondas como sea necesario.</p></div>
+        <span class="wf-badge badge-a">Agencia + Diseño</span>
       </div>
       <div class="workflow-item wf-5">
         <div class="wf-num">05</div>
-        <div class="wf-content"><h3>Reporte mensual</h3><p>Informe con métricas, insights del período y propuesta estratégica para el mes siguiente.</p></div>
+        <div class="wf-content"><h3>Subida a campañas</h3><p>Con las piezas aprobadas, Jean las sube y activa las campañas en Meta Ads y Google Ads.</p></div>
+        <span class="wf-badge badge-a">Agencia</span>
+      </div>
+      <div class="workflow-item wf-6">
+        <div class="wf-num" style="color:var(--purple)">06</div>
+        <div class="wf-content"><h3>Reporte mensual</h3><p>Informe con métricas de campañas, insights del período y propuesta estratégica para el mes siguiente.</p></div>
         <span class="wf-badge badge-s">Agencia + Cliente</span>
       </div>
     </div>
@@ -353,7 +359,7 @@ footer{background:var(--ink);padding:44px 0}
   <div class="container">
     <div class="section-header fade-up" style="margin-bottom:40px">
       <div class="eyebrow" style="color:var(--muted)">Inversión</div>
-      <h2 class="section-title">Todo esto,<br>por <span style="color:var(--pink)">$399.211</span> netos.</h2>
+      <h2 class="section-title">Todo esto,<br>por <span style="color:var(--pink)">10 UF</span> + IVA.</h2>
     </div>
     <div class="pricing-wrap fade-up">
       <div class="pricing-left">
@@ -384,21 +390,19 @@ footer{background:var(--ink);padding:44px 0}
       <div class="pricing-right">
         <div>
           <div class="pi-label">Desglose</div>
-          <div class="price-rows">
-            <div class="price-row"><span class="pr-key">Fee neto mensual</span><span class="pr-val">$399.211</span></div>
-            <div class="price-row"><span class="pr-key">IVA (19%)</span><span class="pr-val">$75.850</span></div>
-            <div class="price-row"><span class="pr-key" style="font-size:11px;opacity:0.65">Equivale a · UF ref.</span><span class="pr-val" style="font-size:12px;opacity:0.75">10 UF · $39.921</span></div>
-            <div class="price-row"><span class="pr-key">Pauta publicitaria</span><span class="pr-val" style="font-style:italic;opacity:0.75">Cargo del cliente</span></div>
-          </div>
+          <div class="price-rows"></div>
         </div>
         <div class="price-total-block">
-          <div class="pt-label">Total con IVA</div>
-          <div><span class="pt-amount">$475.061</span><span class="pt-unit">/mes</span></div>
+          <div class="pt-label">Fee mensual</div>
+          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+            <span class="pt-amount">10 UF</span>
+            <span style="font-family:'Syne',sans-serif;font-size:16px;font-weight:600;color:rgba(255,255,255,0.6)">+ IVA</span>
+          </div>
         </div>
       </div>
     </div>
     <div class="pricing-note fade-up">
-      El valor en CLP varía mensualmente según el valor de la UF del día de emisión de la factura. Valor de referencia UF: $39.921 (15 abr 2026).
+      El valor en CLP varía mensualmente según el valor de la UF del día de emisión de la factura. Valor de referencia UF: $39.921 (15 abr 2026) · Total aprox. $475.061 c/IVA.
     </div>
   </div>
 </section>
